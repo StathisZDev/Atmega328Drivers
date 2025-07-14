@@ -4,8 +4,8 @@ This repository contains custom AVR drivers for the ATmega328 microcontroller, c
 
 ##TO DO
 
-EEPROM 
-3UART communication
-Watchdog Timers
-Debug Capabilities
-Split GPIO and TIMER concerns apart
+- [ ] EEPROM driver
+- [ ] UART communication
+- [ ] Watchdog timer support
+- [ ] Debug capabilities
+- [ ] Split GPIO and Timer concerns into separate modules
