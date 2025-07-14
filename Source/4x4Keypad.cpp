@@ -64,7 +64,7 @@ void AssignState(CurrentState& state,char& InputFromUser,KeyPadState& keypadstat
    {
 	   
 	   state = TRY_ACCESS;
-	   //state machine will split into GRAND or DENY ACCESS
+	   //state machine will split into GRANT or DENY ACCESS
    }
    if(InputFromUser == '*')
    {
