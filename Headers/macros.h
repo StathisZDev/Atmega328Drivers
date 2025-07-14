@@ -38,7 +38,7 @@
 #define REFS1 7  
 
 //TCCR0B
-//ClockSpeed Pre-scaler Used for Timer0 too
+//ClockSpeed Pre-scaler
 #define CS00  0
 #define CS01  1
 #define CS02  2
@@ -67,30 +67,3 @@ typedef uint16_t UINT16;
 
 #define F_CPU  16000000UL
 #define SCKL   100000UL
-/*
-#define PIN1  6
-#define PIN2  0
-#define PIN3  1
-#define PIN4  2
-#define PIN5  3
-#define PIN6  4
-#define PIN9  6
-#define PIN10 7
-#define PIN11 5
-#define PIN12 6
-#define PIN13 7
-#define PIN14 0
-#define PIN15 1
-#define PIN16 2
-#define PIN17 3
-#define PIN18 4
-#define PIN19 5
-#define PIN23 0
-#define PIN24 1
-#define PIN25 2
-#define PIN26 3
-#define PIN27 4
-#define PIN28 5
-
-
-*/

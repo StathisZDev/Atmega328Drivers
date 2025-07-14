@@ -22,7 +22,7 @@ KeypadResult KPReadState(GPIOManager& GPIO,UINT8 RowOFFSET,UINT8 ColOFFSET)
 			GPIO.DigitalOutput(c + ColOFFSET,HIGH,'d');//make sure all other rows are high
 		}
 		GPIO.DigitalOutput(row + RowOFFSET,LOW,'d');//set one
-		GPIO.delay(10); 
+		GPIO.Delay(10); 
 		for(UINT8 col  = 0;col  <4; col ++)
 		{
 			 IsHigh = GPIO.DigitalRead(col  + ColOFFSET,'d');
@@ -42,14 +42,14 @@ void WaitForInput(GPIOManager& Gpio,KeypadResult KPResult,char& InputFromUser)
 	while(!KPResult.isPressed)
 	{
 		KPResult = KPReadState(Gpio,0,4);
-		Gpio.delay(50);
+		Gpio.Delay(50);
 	}
 	
 	InputFromUser = KEYPADMAP[KPResult.indexrow][KPResult.indexcol];
 	while(KPResult.isPressed)
 	{
 		KPResult = KPReadState(Gpio,0,4);
-		Gpio.delay(10);
+		Gpio.Delay(10);
 		//wait for release
 	}
 }
@@ -114,7 +114,7 @@ void HandleGrandAccess(KeyPadState& keypadstate,GPIOManager& Gpio)
 	//Clear LCD 
 	PlaySound(100,Gpio,1000);
 	Gpio.DigitalOutput(PB4,HIGH,'b');
-	Gpio.delay(10000);
+	Gpio.Delay(10000);
 	Gpio.DigitalOutput(PB4,LOW,'b');
 	return;
 }
@@ -127,7 +127,7 @@ void HandleNoInput(KeyPadState& keypadstate)
 void HandleDenyAccess(KeyPadState& keypadstate,GPIOManager& Gpio)
 {
 		Gpio.DigitalOutput(PB0,HIGH,'b');
-		Gpio.delay(10000);
+		Gpio.Delay(10000);
 		Gpio.DigitalOutput(PB0,LOW,'b');
 	return;
 	//Clear LCD 

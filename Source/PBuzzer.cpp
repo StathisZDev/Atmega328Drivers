@@ -17,7 +17,7 @@ void PlaySound(UINT8 number,GPIOManager& Gpio,const UINT8 PlayDurationMs)
 	    OCR2A = number;                       // Set frequency (lower = higher pitch)
 
 	    // Wait for sound duration
-	    Gpio.delay(PlayDurationMs);
+	    Gpio.Delay(PlayDurationMs);
 
 	    // Turn off the buzzer
 	    TCCR2A &= ~((1 << COM2A0) | (1 << COM2A1)); // Stop toggling OC2A

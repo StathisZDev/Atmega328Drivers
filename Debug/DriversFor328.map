@@ -60,23 +60,23 @@ Discarded input sections
                 0x00000000       0x44 Source/GPIO.o
  .text._ZN11GPIOManager11AnalogWriteEch
                 0x00000000       0x24 Source/GPIO.o
- .text._ZN11GPIOManager12ElapsedmicroEv
+ .text._ZN11GPIOManager12ElapsedMicroEv
                 0x00000000       0x2c Source/GPIO.o
- .text._ZN11GPIOManager10delaymicroEj
+ .text._ZN11GPIOManager10DelayMicroEj
                 0x00000000       0x44 Source/GPIO.o
- .text._ZN11GPIOManager7I2CInitEv
+ .text._ZN11GPIOManager7I2cInitEv
                 0x00000000        0xc Source/GPIO.o
- .text._ZN11GPIOManager8I2CStartEv
+ .text._ZN11GPIOManager8I2cStartEv
                 0x00000000       0x10 Source/GPIO.o
- .text._ZN11GPIOManager7I2CStopEv
+ .text._ZN11GPIOManager7I2cStopEv
                 0x00000000        0x8 Source/GPIO.o
- .text._ZN11GPIOManager8I2CWriteEh
+ .text._ZN11GPIOManager8I2cWriteEh
                 0x00000000       0x1c Source/GPIO.o
- .text._ZN11GPIOManager7SPIInitEv
+ .text._ZN11GPIOManager7SpiInitEv
                 0x00000000        0xa Source/GPIO.o
- .text._ZN11GPIOManager11TransferSPIEv
+ .text._ZN11GPIOManager11TransferSpiEv
                 0x00000000       0x1c Source/GPIO.o
- .text._ZN11GPIOManager9EnableSPIEv
+ .text._ZN11GPIOManager9EnableSpiEv
                 0x00000000        0x6 Source/GPIO.o
  .text          0x00000000        0x0 Source/main.o
  .data          0x00000000        0x0 Source/main.o
@@ -528,9 +528,9 @@ END GROUP
  .text._ZN11GPIOManager13SetClockSpeedEhhh
                 0x000004f6       0x34 Source/GPIO.o
                 0x000004f6                _ZN11GPIOManager13SetClockSpeedEhhh
- .text._ZN11GPIOManager11SetTimerPSCEhhh
+ .text._ZN11GPIOManager11SetTimerPscEhhh
                 0x0000052a       0x36 Source/GPIO.o
-                0x0000052a                _ZN11GPIOManager11SetTimerPSCEhhh
+                0x0000052a                _ZN11GPIOManager11SetTimerPscEhhh
  .text._ZN11GPIOManager10Timer0InitEv
                 0x00000560       0x1c Source/GPIO.o
                 0x00000560                _ZN11GPIOManager10Timer0InitEv
@@ -540,9 +540,9 @@ END GROUP
  .text._ZN11GPIOManager7ElapsedEv
                 0x000005c6       0x3c Source/GPIO.o
                 0x000005c6                _ZN11GPIOManager7ElapsedEv
- .text._ZN11GPIOManager17AutoConfigurePSC2Ev
+ .text._ZN11GPIOManager17AutoConfigurePsc2Ev
                 0x00000602        0xc Source/GPIO.o
-                0x00000602                _ZN11GPIOManager17AutoConfigurePSC2Ev
+                0x00000602                _ZN11GPIOManager17AutoConfigurePsc2Ev
  .text._ZN11GPIOManager10Timer2InitEv
                 0x0000060e       0x4a Source/GPIO.o
                 0x0000060e                _ZN11GPIOManager10Timer2InitEv
@@ -550,9 +550,9 @@ END GROUP
                 0x00000658       0x2e Source/GPIO.o
                 0x00000658                _ZN11GPIOManagerC1Ev
                 0x00000658                _ZN11GPIOManagerC2Ev
- .text._ZN11GPIOManager5delayEj
+ .text._ZN11GPIOManager5DelayEj
                 0x00000686       0x44 Source/GPIO.o
-                0x00000686                _ZN11GPIOManager5delayEj
+                0x00000686                _ZN11GPIOManager5DelayEj
  .text._Z41__static_initialization_and_destruction_0ii
                 0x000006ca       0x14 Source/main.o
  .text._Z5SetUpv
@@ -738,15 +738,15 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x30b5
+.debug_info     0x00000000     0x30b3
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x5f4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328/avr5/crtatmega328.o
  .debug_info    0x000005f4      0xcbf Source/4x4Keypad.o
  .debug_info    0x000012b3       0xdf Source/globals.o
- .debug_info    0x00001392      0xb67 Source/GPIO.o
- .debug_info    0x00001ef9      0x904 Source/main.o
- .debug_info    0x000027fd      0x43a Source/PBuzzer.o
- .debug_info    0x00002c37      0x47e Source/utils.o
+ .debug_info    0x00001392      0xb65 Source/GPIO.o
+ .debug_info    0x00001ef7      0x904 Source/main.o
+ .debug_info    0x000027fb      0x43a Source/PBuzzer.o
+ .debug_info    0x00002c35      0x47e Source/utils.o
 
 .debug_abbrev   0x00000000      0xf0a
  *(.debug_abbrev)
@@ -758,15 +758,15 @@ END GROUP
  .debug_abbrev  0x00000c83      0x105 Source/PBuzzer.o
  .debug_abbrev  0x00000d88      0x182 Source/utils.o
 
-.debug_line     0x00000000     0x10c2
+.debug_line     0x00000000     0x10c1
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x134 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328/avr5/crtatmega328.o
  .debug_line    0x00000134      0x3b4 Source/4x4Keypad.o
  .debug_line    0x000004e8       0xac Source/globals.o
- .debug_line    0x00000594      0x683 Source/GPIO.o
- .debug_line    0x00000c17      0x1bb Source/main.o
- .debug_line    0x00000dd2       0xf4 Source/PBuzzer.o
- .debug_line    0x00000ec6      0x1fc Source/utils.o
+ .debug_line    0x00000594      0x682 Source/GPIO.o
+ .debug_line    0x00000c16      0x1bb Source/main.o
+ .debug_line    0x00000dd1       0xf4 Source/PBuzzer.o
+ .debug_line    0x00000ec5      0x1fc Source/utils.o
 
 .debug_frame    0x00000000      0x560
  *(.debug_frame)
