@@ -171,6 +171,9 @@
     <Compile Include="Headers\PBuzzer.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Headers\Timers.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Headers\utils.h">
       <SubType>compile</SubType>
     </Compile>
@@ -187,6 +190,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Source\PBuzzer.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\Timers.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Source\utils.cpp">

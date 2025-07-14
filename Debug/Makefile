@@ -44,6 +44,7 @@ C_SRCS +=  \
 ../Source/GPIO.cpp \
 ../Source/main.cpp \
 ../Source/PBuzzer.cpp \
+../Source/Timers.cpp \
 ../Source/utils.cpp
 
 
@@ -59,6 +60,7 @@ Source/globals.o \
 Source/GPIO.o \
 Source/main.o \
 Source/PBuzzer.o \
+Source/Timers.o \
 Source/utils.o
 
 OBJS_AS_ARGS +=  \
@@ -67,6 +69,7 @@ Source/globals.o \
 Source/GPIO.o \
 Source/main.o \
 Source/PBuzzer.o \
+Source/Timers.o \
 Source/utils.o
 
 C_DEPS +=  \
@@ -75,6 +78,7 @@ Source/globals.d \
 Source/GPIO.d \
 Source/main.d \
 Source/PBuzzer.d \
+Source/Timers.d \
 Source/utils.d
 
 C_DEPS_AS_ARGS +=  \
@@ -83,6 +87,7 @@ Source/globals.d \
 Source/GPIO.d \
 Source/main.d \
 Source/PBuzzer.d \
+Source/Timers.d \
 Source/utils.d
 
 OUTPUT_FILE_PATH +=DriversFor328.elf
@@ -128,6 +133,13 @@ Source/main.o: ../Source/main.cpp
 	
 
 Source/PBuzzer.o: ../Source/PBuzzer.cpp
+	@echo Building file: $<
+	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../Headers"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Source/Timers.o: ../Source/Timers.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../Headers"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

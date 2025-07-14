@@ -12,5 +12,7 @@ Source\main.cpp
 
 Source\PBuzzer.cpp
 
+Source\Timers.cpp
+
 Source\utils.cpp
 

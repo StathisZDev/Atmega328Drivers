@@ -11,8 +11,6 @@
 #include <avr/io.h>
 class GPIOManager
 {
-	private:
-	bool PWMT2enabled;
 	public:
 	GPIOManager();
 //I/O
@@ -23,19 +21,10 @@ class GPIOManager
 	void		AnalogWriteAuto(char AB);
 	void		AnalogWrite(char AB,UINT8 pulsewidthmodulation);
 	void		SetClockSpeed(UINT8 bit0, UINT8 bit1, UINT8 bit2);
-//Timer 
-	void		Timer0Init();
-	void		SetTimerPsc(UINT8 bit0, UINT8 bit1, UINT8 bit2); 
-	uint32_t	Elapsed(); 
-	void		Timer2Init(); 
-	void		AutoConfigurePsc2(); 
 //SPI 
 	void		SpiInit();
-	void		Delay(UINT16 miliseconds);
 	UINT16		TransferSpi(); 
 	void		EnableSpi();
-	uint32_t	ElapsedMicro();
-	void		DelayMicro(UINT16 miliseconds);
 //I2C
 	void		I2cInit(); 	
 	void		I2cStart();

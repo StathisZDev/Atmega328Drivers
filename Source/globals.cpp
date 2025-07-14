@@ -9,3 +9,4 @@
 volatile UINT16 AdcResult = 0;
 volatile uint32_t timeoverflowstack = 0;
 const char password1234[4] = {'5','2','1','7'};
+bool PWMT2enabled = false;

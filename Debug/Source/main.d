@@ -12,7 +12,8 @@ Source/main.d Source/main.o: ../Source/main.cpp \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  ../Headers/macros.h ../Headers/GPIO.h ../Headers/utils.h \
- ../Headers/globals.h ../Headers/PBuzzer.h ../Headers/4X4Keypad.h
+ ../Headers/globals.h ../Headers/PBuzzer.h ../Headers/4X4Keypad.h \
+ ../Headers/Timers.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -49,3 +50,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../Headers/PBuzzer.h:
 
 ../Headers/4X4Keypad.h:
+
+../Headers/Timers.h:

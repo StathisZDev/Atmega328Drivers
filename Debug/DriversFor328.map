@@ -25,7 +25,7 @@ c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/..
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
                               Source/utils.o (__udivmodhi4)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
-                              Source/GPIO.o (__udivmodsi4)
+                              Source/Timers.o (__udivmodsi4)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
                               C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328/avr5/crtatmega328.o (exit)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
@@ -60,10 +60,6 @@ Discarded input sections
                 0x00000000       0x44 Source/GPIO.o
  .text._ZN11GPIOManager11AnalogWriteEch
                 0x00000000       0x24 Source/GPIO.o
- .text._ZN11GPIOManager12ElapsedMicroEv
-                0x00000000       0x2c Source/GPIO.o
- .text._ZN11GPIOManager10DelayMicroEj
-                0x00000000       0x44 Source/GPIO.o
  .text._ZN11GPIOManager7I2cInitEv
                 0x00000000        0xc Source/GPIO.o
  .text._ZN11GPIOManager8I2cStartEv
@@ -84,6 +80,13 @@ Discarded input sections
  .text          0x00000000        0x0 Source/PBuzzer.o
  .data          0x00000000        0x0 Source/PBuzzer.o
  .bss           0x00000000        0x0 Source/PBuzzer.o
+ .text          0x00000000        0x0 Source/Timers.o
+ .data          0x00000000        0x0 Source/Timers.o
+ .bss           0x00000000        0x0 Source/Timers.o
+ .text._Z12ElapsedMicrov
+                0x00000000       0x2c Source/Timers.o
+ .text._Z10DelayMicroj
+                0x00000000       0x38 Source/Timers.o
  .text          0x00000000        0x0 Source/utils.o
  .data          0x00000000        0x0 Source/utils.o
  .bss           0x00000000        0x0 Source/utils.o
@@ -285,6 +288,7 @@ LOAD Source/globals.o
 LOAD Source/GPIO.o
 LOAD Source/main.o
 LOAD Source/PBuzzer.o
+LOAD Source/Timers.o
 LOAD Source/utils.o
 START GROUP
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
@@ -397,7 +401,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x8a4
+.text           0x00000000      0x86c
  *(.vectors)
  .vectors       0x00000000       0x68 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328/avr5/crtatmega328.o
                 0x00000000                __vector_default
@@ -487,103 +491,103 @@ END GROUP
                 0x000000be                . = ALIGN (0x2)
  *(.text.*)
  .text._Z11KPReadStateR11GPIOManagerhh
-                0x000000be       0x92 Source/4x4Keypad.o
+                0x000000be       0x90 Source/4x4Keypad.o
                 0x000000be                _Z11KPReadStateR11GPIOManagerhh
  .text._Z12WaitForInputR11GPIOManager12KeypadResultRc
-                0x00000150       0x7e Source/4x4Keypad.o
-                0x00000150                _Z12WaitForInputR11GPIOManager12KeypadResultRc
+                0x0000014e       0x7a Source/4x4Keypad.o
+                0x0000014e                _Z12WaitForInputR11GPIOManager12KeypadResultRc
  .text._Z15InitKeyPadStateR11KeyPadState
-                0x000001ce       0x18 Source/4x4Keypad.o
-                0x000001ce                _Z15InitKeyPadStateR11KeyPadState
+                0x000001c8       0x18 Source/4x4Keypad.o
+                0x000001c8                _Z15InitKeyPadStateR11KeyPadState
  .text._Z16HandleResetInputR11KeyPadStateR11GPIOManager
-                0x000001e6       0x1a Source/4x4Keypad.o
-                0x000001e6                _Z16HandleResetInputR11KeyPadStateR11GPIOManager
+                0x000001e0       0x1a Source/4x4Keypad.o
+                0x000001e0                _Z16HandleResetInputR11KeyPadStateR11GPIOManager
  .text._Z15HandleTryAccessR11KeyPadStatePKcR12CurrentState
-                0x00000200       0x3a Source/4x4Keypad.o
-                0x00000200                _Z15HandleTryAccessR11KeyPadStatePKcR12CurrentState
+                0x000001fa       0x3a Source/4x4Keypad.o
+                0x000001fa                _Z15HandleTryAccessR11KeyPadStatePKcR12CurrentState
  .text._Z17HandleGrandAccessR11KeyPadStateR11GPIOManager
-                0x0000023a       0x36 Source/4x4Keypad.o
-                0x0000023a                _Z17HandleGrandAccessR11KeyPadStateR11GPIOManager
+                0x00000234       0x34 Source/4x4Keypad.o
+                0x00000234                _Z17HandleGrandAccessR11KeyPadStateR11GPIOManager
  .text._Z16HandleDenyAccessR11KeyPadStateR11GPIOManager
-                0x00000270       0x2e Source/4x4Keypad.o
-                0x00000270                _Z16HandleDenyAccessR11KeyPadStateR11GPIOManager
+                0x00000268       0x2c Source/4x4Keypad.o
+                0x00000268                _Z16HandleDenyAccessR11KeyPadStateR11GPIOManager
  .text._Z22HandleEnterInputNumberR11KeyPadStatecR11GPIOManager
-                0x0000029e       0x14 Source/4x4Keypad.o
-                0x0000029e                _Z22HandleEnterInputNumberR11KeyPadStatecR11GPIOManager
+                0x00000294       0x14 Source/4x4Keypad.o
+                0x00000294                _Z22HandleEnterInputNumberR11KeyPadStatecR11GPIOManager
  .text._Z11HandleState12CurrentStateRcPKcR11KeyPadStateR11GPIOManager
-                0x000002b2       0x7e Source/4x4Keypad.o
-                0x000002b2                _Z11HandleState12CurrentStateRcPKcR11KeyPadStateR11GPIOManager
+                0x000002a8       0x7e Source/4x4Keypad.o
+                0x000002a8                _Z11HandleState12CurrentStateRcPKcR11KeyPadStateR11GPIOManager
  .text._Z11AssignStateR12CurrentStateRcR11KeyPadStatePKcR11GPIOManager
-                0x00000330       0x8a Source/4x4Keypad.o
-                0x00000330                _Z11AssignStateR12CurrentStateRcR11KeyPadStatePKcR11GPIOManager
+                0x00000326       0x8a Source/4x4Keypad.o
+                0x00000326                _Z11AssignStateR12CurrentStateRcR11KeyPadStatePKcR11GPIOManager
  .text._ZN11GPIOManager6SetDirEhhc
-                0x000003ba       0x74 Source/GPIO.o
-                0x000003ba                _ZN11GPIOManager6SetDirEhhc
+                0x000003b0       0x74 Source/GPIO.o
+                0x000003b0                _ZN11GPIOManager6SetDirEhhc
  .text._ZN11GPIOManager13DigitalOutputEhhc
-                0x0000042e       0x6c Source/GPIO.o
-                0x0000042e                _ZN11GPIOManager13DigitalOutputEhhc
+                0x00000424       0x6c Source/GPIO.o
+                0x00000424                _ZN11GPIOManager13DigitalOutputEhhc
  .text._ZN11GPIOManager11DigitalReadEhc
-                0x0000049a       0x5c Source/GPIO.o
-                0x0000049a                _ZN11GPIOManager11DigitalReadEhc
+                0x00000490       0x5c Source/GPIO.o
+                0x00000490                _ZN11GPIOManager11DigitalReadEhc
  .text._ZN11GPIOManager13SetClockSpeedEhhh
-                0x000004f6       0x34 Source/GPIO.o
-                0x000004f6                _ZN11GPIOManager13SetClockSpeedEhhh
- .text._ZN11GPIOManager11SetTimerPscEhhh
-                0x0000052a       0x36 Source/GPIO.o
-                0x0000052a                _ZN11GPIOManager11SetTimerPscEhhh
- .text._ZN11GPIOManager10Timer0InitEv
-                0x00000560       0x1c Source/GPIO.o
-                0x00000560                _ZN11GPIOManager10Timer0InitEv
- .text.__vector_16
-                0x0000057c       0x4a Source/GPIO.o
-                0x0000057c                __vector_16
- .text._ZN11GPIOManager7ElapsedEv
-                0x000005c6       0x3c Source/GPIO.o
-                0x000005c6                _ZN11GPIOManager7ElapsedEv
- .text._ZN11GPIOManager17AutoConfigurePsc2Ev
-                0x00000602        0xc Source/GPIO.o
-                0x00000602                _ZN11GPIOManager17AutoConfigurePsc2Ev
- .text._ZN11GPIOManager10Timer2InitEv
-                0x0000060e       0x4a Source/GPIO.o
-                0x0000060e                _ZN11GPIOManager10Timer2InitEv
+                0x000004ec       0x34 Source/GPIO.o
+                0x000004ec                _ZN11GPIOManager13SetClockSpeedEhhh
  .text._ZN11GPIOManagerC2Ev
-                0x00000658       0x2e Source/GPIO.o
-                0x00000658                _ZN11GPIOManagerC1Ev
-                0x00000658                _ZN11GPIOManagerC2Ev
- .text._ZN11GPIOManager5DelayEj
-                0x00000686       0x44 Source/GPIO.o
-                0x00000686                _ZN11GPIOManager5DelayEj
+                0x00000520       0x1e Source/GPIO.o
+                0x00000520                _ZN11GPIOManagerC1Ev
+                0x00000520                _ZN11GPIOManagerC2Ev
+ .text.__vector_16
+                0x0000053e       0x4a Source/GPIO.o
+                0x0000053e                __vector_16
  .text._Z41__static_initialization_and_destruction_0ii
-                0x000006ca       0x14 Source/main.o
+                0x00000588       0x14 Source/main.o
  .text._Z5SetUpv
-                0x000006de       0xb6 Source/main.o
-                0x000006de                _Z5SetUpv
+                0x0000059c       0xb6 Source/main.o
+                0x0000059c                _Z5SetUpv
  .text._Z5Entryv
-                0x00000794       0x40 Source/main.o
-                0x00000794                _Z5Entryv
- .text.main     0x000007d4        0x4 Source/main.o
-                0x000007d4                main
+                0x00000652       0x3e Source/main.o
+                0x00000652                _Z5Entryv
+ .text.main     0x00000690        0x4 Source/main.o
+                0x00000690                main
  .text._GLOBAL__sub_I_Gpio
-                0x000007d8        0xe Source/main.o
+                0x00000694        0xe Source/main.o
  .text._Z9PlaySoundhR11GPIOManagerh
-                0x000007e6       0x44 Source/PBuzzer.o
-                0x000007e6                _Z9PlaySoundhR11GPIOManagerh
+                0x000006a2       0x40 Source/PBuzzer.o
+                0x000006a2                _Z9PlaySoundhR11GPIOManagerh
+ .text._Z7Elapsedv
+                0x000006e2       0x3c Source/Timers.o
+                0x000006e2                _Z7Elapsedv
+ .text._Z5Delayj
+                0x0000071e       0x38 Source/Timers.o
+                0x0000071e                _Z5Delayj
+ .text._Z17AutoConfigurePsc2v
+                0x00000756        0xc Source/Timers.o
+                0x00000756                _Z17AutoConfigurePsc2v
+ .text._Z10Timer2Initv
+                0x00000762       0x3e Source/Timers.o
+                0x00000762                _Z10Timer2Initv
+ .text._Z11SetTimerPschhh
+                0x000007a0       0x36 Source/Timers.o
+                0x000007a0                _Z11SetTimerPschhh
+ .text._Z10Timer0Initv
+                0x000007d6       0x1c Source/Timers.o
+                0x000007d6                _Z10Timer0Initv
  .text._Z8ClearBithh
-                0x0000082a       0x14 Source/utils.o
-                0x0000082a                _Z8ClearBithh
+                0x000007f2       0x14 Source/utils.o
+                0x000007f2                _Z8ClearBithh
  .text._Z6SetBithh
-                0x0000083e       0x12 Source/utils.o
-                0x0000083e                _Z6SetBithh
+                0x00000806       0x12 Source/utils.o
+                0x00000806                _Z6SetBithh
  .text.libgcc.div
-                0x00000850       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
-                0x00000850                __udivmodsi4
- .text.libgcc   0x00000894        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
-                0x00000894                __tablejump2__
-                0x000008a0                . = ALIGN (0x2)
+                0x00000818       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x00000818                __udivmodsi4
+ .text.libgcc   0x0000085c        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+                0x0000085c                __tablejump2__
+                0x00000868                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000008a0        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x000008a0                _exit
-                0x000008a0                exit
+ .fini9         0x00000868        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000868                _exit
+                0x00000868                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -602,11 +606,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000008a0        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000868        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000008a4                _etext = .
+                0x0000086c                _etext = .
 
-.data           0x00800100       0x14 load address 0x000008a4
+.data           0x00800100       0x14 load address 0x0000086c
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -623,34 +627,37 @@ END GROUP
                 0x00800114                _edata = .
                 0x00800114                PROVIDE (__data_end, .)
 
-.bss            0x00800114        0xf
+.bss            0x00800114       0x10
                 0x00800114                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
+ .bss.PWMT2enabled
+                0x00800114        0x1 Source/globals.o
+                0x00800114                PWMT2enabled
  .bss.timeoverflowstack
-                0x00800114        0x4 Source/globals.o
-                0x00800114                timeoverflowstack
- .bss.KPInput   0x00800118        0x1 Source/main.o
-                0x00800118                KPInput
- .bss.KPResult  0x00800119        0x3 Source/main.o
-                0x00800119                KPResult
+                0x00800115        0x4 Source/globals.o
+                0x00800115                timeoverflowstack
+ .bss.KPInput   0x00800119        0x1 Source/main.o
+                0x00800119                KPInput
+ .bss.KPResult  0x0080011a        0x3 Source/main.o
+                0x0080011a                KPResult
  .bss.KPcurrentState
-                0x0080011c        0x1 Source/main.o
-                0x0080011c                KPcurrentState
- .bss.KPstate   0x0080011d        0x5 Source/main.o
-                0x0080011d                KPstate
- .bss.Gpio      0x00800122        0x1 Source/main.o
-                0x00800122                Gpio
+                0x0080011d        0x1 Source/main.o
+                0x0080011d                KPcurrentState
+ .bss.KPstate   0x0080011e        0x5 Source/main.o
+                0x0080011e                KPstate
+ .bss.Gpio      0x00800123        0x1 Source/main.o
+                0x00800123                Gpio
  *(COMMON)
-                0x00800123                PROVIDE (__bss_end, .)
-                0x000008a4                __data_load_start = LOADADDR (.data)
-                0x000008b8                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800124                PROVIDE (__bss_end, .)
+                0x0000086c                __data_load_start = LOADADDR (.data)
+                0x00000880                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800123        0x0
+.noinit         0x00800124        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800123                _end = .
+                0x00800124                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -698,6 +705,7 @@ END GROUP
  .comment       0x00000030       0x31 Source/GPIO.o
  .comment       0x00000030       0x31 Source/main.o
  .comment       0x00000030       0x31 Source/PBuzzer.o
+ .comment       0x00000030       0x31 Source/Timers.o
  .comment       0x00000030       0x31 Source/utils.o
 
 .note.gnu.avr.deviceinfo
@@ -720,85 +728,94 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x218
+.debug_aranges  0x00000000      0x230
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x70 Source/4x4Keypad.o
  .debug_aranges
                 0x00000070       0x18 Source/globals.o
  .debug_aranges
-                0x00000088       0xd8 Source/GPIO.o
+                0x00000088       0x98 Source/GPIO.o
  .debug_aranges
-                0x00000160       0x40 Source/main.o
+                0x00000120       0x40 Source/main.o
  .debug_aranges
-                0x000001a0       0x20 Source/PBuzzer.o
+                0x00000160       0x20 Source/PBuzzer.o
  .debug_aranges
-                0x000001c0       0x58 Source/utils.o
+                0x00000180       0x58 Source/Timers.o
+ .debug_aranges
+                0x000001d8       0x58 Source/utils.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x30b3
+.debug_info     0x00000000     0x2c60
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x5f4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328/avr5/crtatmega328.o
- .debug_info    0x000005f4      0xcbf Source/4x4Keypad.o
- .debug_info    0x000012b3       0xdf Source/globals.o
- .debug_info    0x00001392      0xb65 Source/GPIO.o
- .debug_info    0x00001ef7      0x904 Source/main.o
- .debug_info    0x000027fb      0x43a Source/PBuzzer.o
- .debug_info    0x00002c35      0x47e Source/utils.o
+ .debug_info    0x000005f4      0xb7e Source/4x4Keypad.o
+ .debug_info    0x00001172       0xf8 Source/globals.o
+ .debug_info    0x0000126a      0x7b1 Source/GPIO.o
+ .debug_info    0x00001a1b      0x7ef Source/main.o
+ .debug_info    0x0000220a      0x323 Source/PBuzzer.o
+ .debug_info    0x0000252d      0x2b5 Source/Timers.o
+ .debug_info    0x000027e2      0x47e Source/utils.o
 
-.debug_abbrev   0x00000000      0xf0a
+.debug_abbrev   0x00000000      0xf57
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x5a2 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328/avr5/crtatmega328.o
- .debug_abbrev  0x000005a2      0x215 Source/4x4Keypad.o
- .debug_abbrev  0x000007b7       0x64 Source/globals.o
- .debug_abbrev  0x0000081b      0x26c Source/GPIO.o
- .debug_abbrev  0x00000a87      0x1fc Source/main.o
- .debug_abbrev  0x00000c83      0x105 Source/PBuzzer.o
- .debug_abbrev  0x00000d88      0x182 Source/utils.o
+ .debug_abbrev  0x000005a2      0x204 Source/4x4Keypad.o
+ .debug_abbrev  0x000007a6       0x64 Source/globals.o
+ .debug_abbrev  0x0000080a      0x1c8 Source/GPIO.o
+ .debug_abbrev  0x000009d2      0x1eb Source/main.o
+ .debug_abbrev  0x00000bbd       0xfd Source/PBuzzer.o
+ .debug_abbrev  0x00000cba      0x11b Source/Timers.o
+ .debug_abbrev  0x00000dd5      0x182 Source/utils.o
 
-.debug_line     0x00000000     0x10c1
+.debug_line     0x00000000     0x119a
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x134 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328/avr5/crtatmega328.o
- .debug_line    0x00000134      0x3b4 Source/4x4Keypad.o
- .debug_line    0x000004e8       0xac Source/globals.o
- .debug_line    0x00000594      0x682 Source/GPIO.o
- .debug_line    0x00000c16      0x1bb Source/main.o
- .debug_line    0x00000dd1       0xf4 Source/PBuzzer.o
- .debug_line    0x00000ec5      0x1fc Source/utils.o
+ .debug_line    0x00000134      0x3c0 Source/4x4Keypad.o
+ .debug_line    0x000004f4       0xac Source/globals.o
+ .debug_line    0x000005a0      0x4e8 Source/GPIO.o
+ .debug_line    0x00000a88      0x1c7 Source/main.o
+ .debug_line    0x00000c4f      0x102 Source/PBuzzer.o
+ .debug_line    0x00000d51      0x24d Source/Timers.o
+ .debug_line    0x00000f9e      0x1fc Source/utils.o
 
-.debug_frame    0x00000000      0x560
+.debug_frame    0x00000000      0x548
  *(.debug_frame)
  .debug_frame   0x00000000      0x190 Source/4x4Keypad.o
- .debug_frame   0x00000190      0x214 Source/GPIO.o
- .debug_frame   0x000003a4       0x64 Source/main.o
- .debug_frame   0x00000408       0x38 Source/PBuzzer.o
- .debug_frame   0x00000440      0x120 Source/utils.o
+ .debug_frame   0x00000190      0x134 Source/GPIO.o
+ .debug_frame   0x000002c4       0x64 Source/main.o
+ .debug_frame   0x00000328       0x38 Source/PBuzzer.o
+ .debug_frame   0x00000360       0xc8 Source/Timers.o
+ .debug_frame   0x00000428      0x120 Source/utils.o
 
-.debug_str      0x00000000      0xe3f
+.debug_str      0x00000000      0xddc
  *(.debug_str)
  .debug_str     0x00000000      0x208 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328/avr5/crtatmega328.o
- .debug_str     0x00000208      0x932 Source/4x4Keypad.o
-                                0x99b (size before relaxing)
- .debug_str     0x00000b3a       0x3f Source/globals.o
-                                0x1f5 (size before relaxing)
- .debug_str     0x00000b79       0xee Source/GPIO.o
-                                0x697 (size before relaxing)
- .debug_str     0x00000c67       0xaf Source/main.o
-                                0x7cf (size before relaxing)
- .debug_str     0x00000d16       0x2c Source/PBuzzer.o
-                                0x5e5 (size before relaxing)
- .debug_str     0x00000d42       0xfd Source/utils.o
+ .debug_str     0x00000208      0x7d8 Source/4x4Keypad.o
+                                0x841 (size before relaxing)
+ .debug_str     0x000009e0       0x55 Source/globals.o
+                                0x207 (size before relaxing)
+ .debug_str     0x00000a35       0xed Source/GPIO.o
+                                0x542 (size before relaxing)
+ .debug_str     0x00000b22       0xaf Source/main.o
+                                0x675 (size before relaxing)
+ .debug_str     0x00000bd1       0x2c Source/PBuzzer.o
+                                0x48b (size before relaxing)
+ .debug_str     0x00000bfd       0xe2 Source/Timers.o
+                                0x311 (size before relaxing)
+ .debug_str     0x00000cdf       0xfd Source/utils.o
                                 0x2f1 (size before relaxing)
 
-.debug_loc      0x00000000     0x1c34
+.debug_loc      0x00000000     0x1a32
  *(.debug_loc)
  .debug_loc     0x00000000      0x8c5 Source/4x4Keypad.o
- .debug_loc     0x000008c5      0xd87 Source/GPIO.o
- .debug_loc     0x0000164c       0x4c Source/main.o
- .debug_loc     0x00001698       0xcc Source/PBuzzer.o
- .debug_loc     0x00001764      0x4d0 Source/utils.o
+ .debug_loc     0x000008c5      0x90c Source/GPIO.o
+ .debug_loc     0x000011d1       0x4c Source/main.o
+ .debug_loc     0x0000121d       0xbd Source/PBuzzer.o
+ .debug_loc     0x000012da      0x288 Source/Timers.o
+ .debug_loc     0x00001562      0x4d0 Source/utils.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -818,13 +835,14 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x1b0
+.debug_ranges   0x00000000      0x1b8
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x60 Source/4x4Keypad.o
- .debug_ranges  0x00000060       0xc8 Source/GPIO.o
- .debug_ranges  0x00000128       0x30 Source/main.o
- .debug_ranges  0x00000158       0x10 Source/PBuzzer.o
- .debug_ranges  0x00000168       0x48 Source/utils.o
+ .debug_ranges  0x00000060       0x88 Source/GPIO.o
+ .debug_ranges  0x000000e8       0x30 Source/main.o
+ .debug_ranges  0x00000118       0x10 Source/PBuzzer.o
+ .debug_ranges  0x00000128       0x48 Source/Timers.o
+ .debug_ranges  0x00000170       0x48 Source/utils.o
 
 .debug_macro
  *(.debug_macro)

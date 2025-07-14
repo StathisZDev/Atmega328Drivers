@@ -11,6 +11,7 @@
 #include "globals.h"
 #include "PBuzzer.h"
 #include "4X4Keypad.h"
+#include "Timers.h"
 
 //KeyPad Demo 
 GPIOManager  Gpio;
@@ -49,7 +50,7 @@ void Entry()
 	{
 		WaitForInput(Gpio,KPResult,KPInput);		
 		AssignState(KPcurrentState,KPInput,KPstate,password1234,Gpio);
-		Gpio.Delay(50);
+		Delay(50);
 	}
 }
 
